@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cpu, Database, Globe, Mail, Github, Linkedin, ChevronRight, Terminal, MessageSquare } from "lucide-react";
+import { Cpu, Database, Globe, Mail, ChevronRight, Terminal, MessageSquare, Code2, Users } from "lucide-react";
 import BootSequence from "../components/BootSequence";
 
 export default function Home() {
@@ -165,8 +165,8 @@ export default function Home() {
           <footer id="connection" className="py-40 px-10 md:px-20 border-t border-white/5 flex flex-col items-center">
              <h3 className="text-6xl md:text-8xl font-bold mb-12 text-center">INITIALIZE_<br/><span className="text-neon-green">CONNECTION</span></h3>
              <div className="flex gap-10 mt-10">
-                <SocialLink icon={<Github />} href="https://github.com" label="GITHUB" />
-                <SocialLink icon={<Linkedin />} href="https://linkedin.com" label="LINKEDIN" />
+                <SocialLink icon={<Code2 />} href="https://github.com" label="GITHUB" />
+                <SocialLink icon={<Users />} href="https://linkedin.com" label="LINKEDIN" />
                 <SocialLink icon={<Mail />} href="mailto:vaibhav@system.ai" label="EMAIL" />
              </div>
              <p className="mt-20 opacity-20 text-[10px] font-mono tracking-widest uppercase">
@@ -201,7 +201,7 @@ function SystemCard({ id, title, problem, solution, tech, link, highlight }) {
         {tech}
       </div>
       <a href={link} className="absolute bottom-6 right-8 text-white/40 group-hover:text-neon-green transition-colors">
-        <Github size={20} />
+        <Code2 size={20} />
       </a>
     </motion.div>
   );

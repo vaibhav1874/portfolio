@@ -1,66 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="section" style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        textAlign: 'center',
+        paddingTop: '120px'
+      }}>
+        <div className="fade-in-up">
+          <p style={{ 
+            color: 'var(--accent-primary)', 
+            fontWeight: '600', 
+            letterSpacing: '0.1em', 
+            marginBottom: '16px',
+            fontSize: '0.9rem'
+          }}>
+            WELCOME TO MY ARCHIVE
           </p>
+          <h1 className="text-gradient" style={{ 
+            fontSize: 'clamp(3rem, 8vw, 5rem)', 
+            lineHeight: 1.1, 
+            marginBottom: '24px' 
+          }}>
+            Crafting Digital<br />Experiences That Matter
+          </h1>
+          <p style={{ 
+            maxWidth: '600px', 
+            margin: '0 auto 40px', 
+            color: 'var(--text-secondary)',
+            fontSize: '1.1rem',
+            lineHeight: 1.6
+          }}>
+            I am a Full Stack Developer specializing in building high-performance, 
+            aesthetically driven web applications using modern technologies.
+          </p>
+          
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+            <a href="#projects" className="btn btn-primary">View Projects</a>
+            <a href="#about" className="btn btn-outline">Read Story</a>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Feature Section Placeholder */}
+      <section className="section" id="projects">
+        <h2 style={{ fontSize: '2.5rem', marginBottom: '40px', textAlign: 'left' }}>
+          Selected <span style={{ color: 'var(--accent-primary)' }}>Works</span>
+        </h2>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gap: '32px' 
+        }}>
+          {/* Project Card Placeholder */}
+          <div className="glass" style={{ height: '400px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <p style={{ color: 'var(--accent-primary)', fontSize: '0.8rem', marginBottom: '8px' }}>COMING SOON</p>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Next Big Thing</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>A revolution in digital interactions.</p>
+          </div>
+          <div className="glass" style={{ height: '400px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <p style={{ color: 'var(--accent-primary)', fontSize: '0.8rem', marginBottom: '8px' }}>COMING SOON</p>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Emerald Portal</h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>The future of premium design.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

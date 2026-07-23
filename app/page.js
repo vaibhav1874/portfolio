@@ -305,35 +305,35 @@ Current Status: Active Matriculation`;
                 <MetricCategory 
                   title="LANGUAGES & CORE" 
                   skills={[
-                    { name: "Python", val: 92 },
-                    { name: "C++", val: 85 },
-                    { name: "Java", val: 80 },
-                    { name: "JavaScript", val: 82 },
-                    { name: "C", val: 75 }
+                    { name: "Python", val: 96 },
+                    { name: "C++", val: 90 },
+                    { name: "Java", val: 88 },
+                    { name: "JavaScript", val: 75 },
+                    { name: "C", val: 85 }
                   ]} 
                 />
                 
                 <MetricCategory 
                   title="FRONTEND & BACKEND" 
                   skills={[
-                    { name: "FastAPI", val: 88 },
-                    { name: "REST APIs", val: 85 },
-                    { name: "HTML5 / CSS3", val: 90 },
-                    { name: "Tailwind CSS", val: 93 },
-                    { name: "Next.js", val: 80 },
-                    { name: "React", val: 60, status: "Learning" }
+                    { name: "FastAPI", val: 80 },
+                    { name: "REST APIs", val: 75 },
+                    { name: "HTML5 / CSS3", val: 95 },
+                    { name: "Tailwind CSS", val: 85 },
+                    { name: "Next.js", val: 70 },
+                    { name: "React", val: 50, status: "Learning" }
                   ]} 
                 />
 
                 <MetricCategory 
                   title="AI, DATABASES & TOOLS" 
                   skills={[
-                    { name: "Gemini API", val: 90 },
-                    { name: "Machine Learning", val: 60, status: "Learning" },
-                    { name: "Firebase / Firestore", val: 85 },
-                    { name: "MongoDB", val: 82 },
-                    { name: "Git & GitHub", val: 90 },
-                    { name: "NumPy / Pandas", val: 78 }
+                    { name: "Gemini API", val: 80 },
+                    { name: "Machine Learning", val: 50, status: "Learning" },
+                    { name: "Firebase / Firestore", val: 75 },
+                    { name: "MongoDB", val: 70 },
+                    { name: "Git & GitHub", val: 80 },
+                    { name: "NumPy / Pandas", val: 88 }
                   ]} 
                 />
               </div>

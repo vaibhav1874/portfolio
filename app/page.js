@@ -152,9 +152,9 @@ Current Status: Active Matriculation`;
           className="relative z-10 grid-bg"
         >
           {/* Header */}
-          <header className="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50 mix-blend-difference">
-            <div className="text-xl font-bold tracking-tighter neon-text">VG_SYSTEM_v2.0</div>
-            <nav className="flex gap-4 sm:gap-8 text-[10px] sm:text-xs tracking-widest uppercase opacity-60">
+          <header className="fixed top-0 left-0 w-full p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 z-50 bg-[#050608]/90 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none border-b border-white/5 sm:border-none">
+            <div className="text-lg sm:text-xl font-bold tracking-tighter neon-text">VG_SYSTEM_v2.0</div>
+            <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 sm:gap-8 text-[9px] sm:text-xs tracking-widest uppercase opacity-60">
               <a href="#systems" className="hover:opacity-100 transition-opacity">Projects</a>
               <a href="#metrics" className="hover:opacity-100 transition-opacity">Skills</a>
               <a href="#logbook" className="hover:opacity-100 transition-opacity">Logbook</a>
@@ -164,7 +164,7 @@ Current Status: Active Matriculation`;
           </header>
 
           {/* Hero Section */}
-          <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 pt-20 relative">
+          <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 pt-28 sm:pt-20 relative">
             <motion.div 
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

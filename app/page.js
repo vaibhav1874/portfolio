@@ -317,10 +317,11 @@ Current Status: Active Matriculation`;
                   title="FRONTEND & BACKEND" 
                   skills={[
                     { name: "FastAPI", val: 88 },
+                    { name: "REST APIs", val: 85 },
                     { name: "HTML5 / CSS3", val: 90 },
                     { name: "Tailwind CSS", val: 93 },
                     { name: "Next.js", val: 80 },
-                    { name: "React", val: 70 } // learning
+                    { name: "React", val: 60, status: "Learning" }
                   ]} 
                 />
 
@@ -328,6 +329,7 @@ Current Status: Active Matriculation`;
                   title="AI, DATABASES & TOOLS" 
                   skills={[
                     { name: "Gemini API", val: 90 },
+                    { name: "Machine Learning", val: 60, status: "Learning" },
                     { name: "Firebase / Firestore", val: 85 },
                     { name: "MongoDB", val: 82 },
                     { name: "Git & GitHub", val: 90 },
@@ -658,8 +660,17 @@ function MetricCategory({ title, skills }) {
         {skills.map((skill, i) => (
           <div key={skill.name}>
             <div className="flex justify-between text-[10px] font-mono mb-1.5 uppercase tracking-wide">
-              <span>{skill.name}</span>
-              <span className="text-neon-green/60">{skill.val}%</span>
+              <span className="flex items-center gap-2">
+                {skill.name}
+                {skill.status && (
+                  <span className="text-[8px] bg-neon-blue/15 border border-neon-blue/30 text-neon-blue px-1.5 py-0.5 rounded font-mono uppercase tracking-widest leading-none">
+                    {skill.status}
+                  </span>
+                )}
+              </span>
+              <span className={skill.status ? "text-neon-blue" : "text-neon-green/60"}>
+                {skill.val}%
+              </span>
             </div>
             <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
               <motion.div 
@@ -667,7 +678,11 @@ function MetricCategory({ title, skills }) {
                 whileInView={{ width: `${skill.val}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="h-full bg-gradient-to-r from-neon-green/30 to-neon-green"
+                className={`h-full bg-gradient-to-r ${
+                  skill.status 
+                    ? "from-neon-blue/30 to-neon-blue" 
+                    : "from-neon-green/30 to-neon-green"
+                }`}
               />
             </div>
           </div>

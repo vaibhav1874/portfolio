@@ -305,35 +305,35 @@ Current Status: Active Matriculation`;
                 <MetricCategory 
                   title="LANGUAGES & CORE" 
                   skills={[
-                    { name: "Python", val: 96 },
-                    { name: "C++", val: 90 },
-                    { name: "Java", val: 88 },
-                    { name: "JavaScript", val: 75 },
-                    { name: "C", val: 85 }
+                    { name: "Python", val: 96, zone: "green" },
+                    { name: "C++", val: 90, zone: "green" },
+                    { name: "Java", val: 88, zone: "green" },
+                    { name: "C", val: 85, zone: "green" },
+                    { name: "JavaScript", val: 70, zone: "blue" }
                   ]} 
                 />
                 
                 <MetricCategory 
                   title="FRONTEND & BACKEND" 
                   skills={[
-                    { name: "FastAPI", val: 80 },
-                    { name: "REST APIs", val: 75 },
-                    { name: "HTML5 / CSS3", val: 95 },
-                    { name: "Tailwind CSS", val: 85 },
-                    { name: "Next.js", val: 70 },
-                    { name: "React", val: 50, status: "Learning" }
+                    { name: "HTML5 / CSS3", val: 95, zone: "green" },
+                    { name: "Tailwind CSS", val: 80, zone: "blue" },
+                    { name: "FastAPI", val: 58, zone: "blue" },
+                    { name: "REST APIs", val: 55, zone: "blue" },
+                    { name: "Next.js", val: 52, zone: "blue" },
+                    { name: "React", val: 45, zone: "red", status: "Learning" }
                   ]} 
                 />
 
                 <MetricCategory 
                   title="AI, DATABASES & TOOLS" 
                   skills={[
-                    { name: "Gemini API", val: 80 },
-                    { name: "Machine Learning", val: 50, status: "Learning" },
-                    { name: "Firebase / Firestore", val: 75 },
-                    { name: "MongoDB", val: 70 },
-                    { name: "Git & GitHub", val: 80 },
-                    { name: "NumPy / Pandas", val: 88 }
+                    { name: "NumPy / Pandas", val: 88, zone: "green" },
+                    { name: "Git & GitHub", val: 75, zone: "blue" },
+                    { name: "Gemini API", val: 75, zone: "blue" },
+                    { name: "Firebase / Firestore", val: 70, zone: "blue" },
+                    { name: "MongoDB", val: 65, zone: "blue" },
+                    { name: "Machine Learning", val: 45, zone: "red", status: "Learning" }
                   ]} 
                 />
               </div>
@@ -657,36 +657,48 @@ function MetricCategory({ title, skills }) {
         {title}
       </h4>
       <div className="space-y-4">
-        {skills.map((skill, i) => (
-          <div key={skill.name}>
-            <div className="flex justify-between text-[10px] font-mono mb-1.5 uppercase tracking-wide">
-              <span className="flex items-center gap-2">
-                {skill.name}
-                {skill.status && (
-                  <span className="text-[8px] bg-neon-blue/15 border border-neon-blue/30 text-neon-blue px-1.5 py-0.5 rounded font-mono uppercase tracking-widest leading-none">
-                    {skill.status}
-                  </span>
-                )}
-              </span>
-              <span className={skill.status ? "text-neon-blue" : "text-neon-green/60"}>
-                {skill.val}%
-              </span>
+        {skills.map((skill, i) => {
+          let textStyle = "text-neon-green/60";
+          let barStyle = "from-neon-green/30 to-neon-green";
+          let tagStyle = "bg-neon-green/15 border-neon-green/30 text-neon-green";
+
+          if (skill.zone === "blue") {
+            textStyle = "text-neon-blue";
+            barStyle = "from-neon-blue/30 to-neon-blue";
+            tagStyle = "bg-neon-blue/15 border-neon-blue/30 text-neon-blue";
+          } else if (skill.zone === "red") {
+            textStyle = "text-neon-red";
+            barStyle = "from-neon-red/30 to-neon-red";
+            tagStyle = "bg-neon-red/15 border-neon-red/30 text-neon-red";
+          }
+
+          return (
+            <div key={skill.name}>
+              <div className="flex justify-between text-[10px] font-mono mb-1.5 uppercase tracking-wide">
+                <span className="flex items-center gap-2">
+                  {skill.name}
+                  {skill.status && (
+                    <span className={`text-[8px] border px-1.5 py-0.5 rounded font-mono uppercase tracking-widest leading-none ${tagStyle}`}>
+                      {skill.status}
+                    </span>
+                  )}
+                </span>
+                <span className={textStyle}>
+                  {skill.val}%
+                </span>
+              </div>
+              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.val}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className={`h-full bg-gradient-to-r ${barStyle}`}
+                />
+              </div>
             </div>
-            <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-              <motion.div 
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.val}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className={`h-full bg-gradient-to-r ${
-                  skill.status 
-                    ? "from-neon-blue/30 to-neon-blue" 
-                    : "from-neon-green/30 to-neon-green"
-                }`}
-              />
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

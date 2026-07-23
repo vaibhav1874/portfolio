@@ -3,6 +3,7 @@
 @theme {
   --color-neon-green: #10b981;
   --color-neon-blue: #3b82f6;
+  --color-neon-red: #ef4444;
   --color-neon-glow: rgba(16, 185, 129, 0.4);
   
   --font-syne: var(--font-syne);

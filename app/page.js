@@ -79,20 +79,25 @@ Current Status: Active Matriculation`;
 - CORE SUBJECTS: Data Structures & Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks`;
     } else if (lowerCmd === "/projects" || lowerCmd === "projects") {
       responseText = `ACTIVE REPOSITORY SYSTEMS:
-[1] TRUEVAIL - AI-Powered Fake News Detection Platform
+[1] PS-07 EXOPLANET TRANSIT DETECTION - AI Pipeline
+    Tech: Python, Streamlit, Lightkurve, Astropy, RandomForest
+    Desc: Automatically detects exoplanet transits from stellar light curves.
+    GitHub: https://github.com/vaibhav1874/PS-07-Bharatiya-Antariksh-Hackathon-2026
+
+[2] TRUEVAIL - AI-Powered Fake News Detection Platform
     Tech: Python, FastAPI, Firebase, Gemini API
     Desc: Developed an AI platform to verify news credibility using LLMs.
     GitHub: https://github.com/vaibhav1874/TrueVail
 
-[2] TRUSTIQ - AI-Based Trust Verification System
+[3] TRUSTIQ - AI-Based Trust Verification System
     Desc: Built an intelligent platform for credibility verification & trust analysis.
     GitHub: https://github.com/vaibhav1874/Trustiq
 
-[3] MONEY MENTOR - AI Personal Finance Assistant
+[4] MONEY MENTOR - AI Personal Finance Assistant
     Desc: Created budgeting and smart AI personal finance recommender system.
     GitHub: https://github.com/vaibhav1874/money-mentor
 
-[4] BATTLEVERSE - Rap Battle Competitive Platform
+[5] BATTLEVERSE - Rap Battle Competitive Platform
     Role: Founder / Coordinator. Managed branding, event operations, community outreach.`;
     } else if (lowerCmd === "/hackathons" || lowerCmd === "hackathons" || lowerCmd === "achievements") {
       responseText = `COMPETITIVE HACKATHON LOGS:
@@ -215,9 +220,23 @@ Current Status: Active Matriculation`;
               <div className="h-px w-full bg-gradient-to-r from-neon-green/50 to-transparent mt-4"></div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               <SystemCard 
-                id="SYS_01_TRUEVAIL" 
+                id="SYS_01_EXOPLANET" 
+                title="Exoplanet Transit Detection" 
+                tech="Python, Streamlit, Lightkurve, Astropy, RandomForest"
+                problem="Identifying tiny, faint exoplanetary transit signals obscured by stellar noise in massive astronomical datasets."
+                solution="End-to-end AI pipeline developed for ISRO's Bharatiya Antariksh Hackathon 2026 (Problem Statement 07) that downloads Kepler/TESS curves, detrends stellar variability, characterizes transits, and classifies candidate signals."
+                bulletPoints={[
+                  "Built a fully automated detrending & period-search module (BLS search + fold).",
+                  "Integrated transit model fits using Mandel-Agol (batman) & lmfit optimization.",
+                  "Engineered 5 vetting checks (odd-even, secondary eclipse, centroid shift) & RF Classifier."
+                ]}
+                link="https://github.com/vaibhav1874/PS-07-Bharatiya-Antariksh-Hackathon-2026"
+                highlight
+              />
+              <SystemCard 
+                id="SYS_02_TRUEVAIL" 
                 title="TrueVail" 
                 tech="Python, FastAPI, Firebase, Gemini API"
                 problem="High volume of unreliable digital media & fake news propagating online."
@@ -228,10 +247,9 @@ Current Status: Active Matriculation`;
                   "Engineered automated workflows for credibility scoring and verification reviews."
                 ]}
                 link="https://github.com/vaibhav1874/TrueVail"
-                highlight
               />
               <SystemCard 
-                id="SYS_02_TRUSTIQ" 
+                id="SYS_03_TRUSTIQ" 
                 title="TrustIQ" 
                 tech="AI Workflows, Credibility Verification, UI/UX"
                 problem="Lack of automated trust scoring and reliability metrics for online data systems."
@@ -244,7 +262,7 @@ Current Status: Active Matriculation`;
                 link="https://github.com/vaibhav1874/Trustiq"
               />
               <SystemCard 
-                id="SYS_03_MONEY_MENTOR" 
+                id="SYS_04_MONEY_MENTOR" 
                 title="Money Mentor" 
                 tech="AI Recommendations, Python, Financial Planning"
                 problem="Lack of structured personal budgeting tools combined with intelligent advisory interfaces."
@@ -257,7 +275,7 @@ Current Status: Active Matriculation`;
                 link="https://github.com/vaibhav1874/money-mentor"
               />
               <SystemCard 
-                id="SYS_04_BATTLEVERSE" 
+                id="SYS_05_BATTLEVERSE" 
                 title="BattleVerse" 
                 tech="Next.js, MongoDB, Community Operations"
                 problem="Absence of a localized, dedicated platform for underground competitive rap battles."
@@ -415,7 +433,7 @@ Current Status: Active Matriculation`;
                     </div>
                     <div className="flex items-start gap-2 text-xs font-mono text-white/80">
                       <span className="text-neon-green">🚀</span>
-                      <span>Selected in Top 20 teams out of 1,500+ competing teams globally.</span>
+                      <span><strong>Top 20 Team (out of 1,500+ teams)</strong> – ISRO Bharatiya Antariksh Hackathon 2026 (Problem Statement 07: Exoplanet Transit Detection).</span>
                     </div>
                   </div>
                 </div>
